@@ -1,0 +1,25 @@
+{
+  "name": "discord-music-bot",
+  "version": "1.0.0",
+  "description": "Bot musik Discord (YouTube, Spotify, SoundCloud) pakai discord.js + DisTube",
+  "main": "index.js",
+  "type": "commonjs",
+  "scripts": {
+    "start": "node index.js",
+    "deploy": "node deploy-commands.js"
+  },
+  "dependencies": {
+    "@discordjs/opus": "^0.10.0",
+    "@discordjs/voice": "^0.19.2",
+    "@distube/soundcloud": "^2.0.4",
+    "@distube/spotify": "^2.0.0",
+    "@distube/yt-dlp": "^2.0.1",
+    "discord.js": "^14.15.3",
+    "distube": "^5.0.4",
+    "dotenv": "^16.4.5",
+    "ffmpeg-static": "^5.2.0"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}

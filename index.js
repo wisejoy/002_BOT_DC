@@ -43,7 +43,7 @@ client.distube = new DisTube(client, {
   emitAddListWhenCreatingQueue: false,
   plugins: [spotifyPlugin, new SoundCloudPlugin(), new YtDlpPlugin()],
   ffmpeg: {
-    path: require('ffmpeg-static'),
+    path: 'ffmpeg',
   },
 });
 client.distube.on('debug', (message) => console.log('[DisTube Debug]', message));

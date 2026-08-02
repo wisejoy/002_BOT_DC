@@ -30,11 +30,11 @@ for (const file of commandFiles) {
 const spotifyPlugin =
   process.env.SPOTIFY_CLIENT_ID && process.env.SPOTIFY_CLIENT_SECRET
     ? new SpotifyPlugin({
-        api: {
-          clientId: process.env.SPOTIFY_CLIENT_ID,
-          clientSecret: process.env.SPOTIFY_CLIENT_SECRET,
-        },
-      })
+      api: {
+        clientId: process.env.SPOTIFY_CLIENT_ID,
+        clientSecret: process.env.SPOTIFY_CLIENT_SECRET,
+      },
+    })
     : new SpotifyPlugin(); // tetap bisa parsing link tanpa API key (fallback)
 
 client.distube = new DisTube(client, {
@@ -42,6 +42,9 @@ client.distube = new DisTube(client, {
   emitAddSongWhenCreatingQueue: false,
   emitAddListWhenCreatingQueue: false,
   plugins: [spotifyPlugin, new SoundCloudPlugin(), new YtDlpPlugin()],
+  ffmpeg: {
+    path: require('ffmpeg-static'),
+  },
 });
 
 // ---- Load event handler DisTube & Discord dari folder /events ----

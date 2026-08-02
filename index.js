@@ -46,6 +46,8 @@ client.distube = new DisTube(client, {
     path: require('ffmpeg-static'),
   },
 });
+client.distube.on('debug', (message) => console.log('[DisTube Debug]', message));
+client.distube.on('ffmpegDebug', (message) => console.log('[FFmpeg Debug]', message));
 
 // ---- Load event handler DisTube & Discord dari folder /events ----
 const eventsPath = path.join(__dirname, 'events');

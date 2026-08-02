@@ -5,6 +5,9 @@ module.exports = {
   once: false,
   emitter: 'distube',
   execute(queue, song) {
+    console.log(
+      `[DEBUG playSong] Queue ${queue.id} | source: ${song.source} | url: ${song.url} | isLive: ${song.isLive} | duration: ${song.duration}s`
+    );
     const embed = new EmbedBuilder()
       .setColor('#1DB954')
       .setDescription(
